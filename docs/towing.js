@@ -37,7 +37,6 @@ $(document).ready(function() {
     set('#newgcvw', (data.tt_gvwr - data.tt_hitch) + newgvw);
     set('#newTowingCapacity', data.towingCapacity);
     createCookie('towingData', JSON.stringify(data), 365);
-    console.log('set cookie towingData = ' + JSON.stringify(data));
   }
 
   function get(selector) {
@@ -54,14 +53,11 @@ $(document).ready(function() {
   function loadCookies() {
     var raw = accessCookie('towingData');
     if (raw !="") {
-      console.log(raw);
       data = JSON.parse(raw);
       for(var key in data) {
         set('#' + key, data[key]);
       }
       calculate();
-    } else {
-      console.log('no data saved');
     }
   }
 
