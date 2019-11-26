@@ -1,0 +1,10 @@
+p.info span {  color: #666 }
+footer:before{
+  content: "";
+  display: table;
+  clear: both;
+}
+footer {
+  color: #888;
+  text-align: center;
+}

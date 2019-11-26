@@ -1,3 +1,8 @@
+//
+// towing.js
+// Created by Francisco Sanchez on 11/26/19
+// Copyright © 2019 Sanchez Parra Labs. All rights reserved.
+//
 $(document).ready(function() {
 
   var labels = ['passengers', 'cargo', 'curbWeight', 'gcvwr', 'gvwr', 'towingCapacity', 'payload', 'tt_hitch', 'tt_gvwr', 'tt_uvw'];

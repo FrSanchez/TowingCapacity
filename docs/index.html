@@ -2,14 +2,17 @@
 <html lang="en">
 
 <head>
+  <meta name="description" content="Towing Capacity Calculator">
+  <meta name="author" content="Francisco Sanchez" />
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="style.css" />
 
-  <title>Towing Capacity</title>
+  <title>Towing Capacity Calculator</title>
 </head>
 
 <body>
@@ -19,10 +22,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-  <div class="container-fluid">
-    <h1>Towing Capacity</h1>
+  <div class="container">
+    <h1>Towing Capacity Calculator</h1>
     <div class="row">
-      <div class="col-6">
+      <div class="col">
         <h2>Truck Data</h2>
 
         <small id="curbWeightHelp" class="form-text text-muted"></small>
@@ -89,9 +92,7 @@
         </div>
 
 
-      </div>
 
-      <div class="col-4">
         <h2>Travel Trailer Data</h2>
         <div class="input-group mb-3">
           <div class="input-group-prepend" data-toggle="tooltip" title="Unloaded Vehicle Weight">
@@ -147,7 +148,9 @@
   </div>
 
   <script type="text/javascript" src="towing.min.js"></script>
-
+  <footer>
+&bull; Created by <b>Francisco Sanchez</b> &bull; Source code on <a href="https://github.com/FrSanchez/TowingCapacity" target="_blank" title="GitHub">GitHub</a>
+</footer>
 </body>
 
 </html>
