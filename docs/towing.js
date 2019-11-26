@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-  var labels = ['passengers', 'cargo', 'curbWeight', 'gcvwr', 'gvwr', 'towingCapacity', 'payload', 'tt_hitch', 'tt_gvwr'];
+  var labels = ['passengers', 'cargo', 'curbWeight', 'gcvwr', 'gvwr', 'towingCapacity', 'payload', 'tt_hitch', 'tt_gvwr', 'tt_uvw'];
 
   function createCookie(cookieName, cookieValue, daysToExpire) {
     var date = new Date();
@@ -20,18 +20,17 @@ $(document).ready(function() {
   }
 
   function calculate() {
-    var data = [];
+    var data = {};
     for (i = 0; i < labels.length; i++) {
-      data.push(get('#' + labels[i]));
+      data[labels[i]] = get('#' + labels[i]);
     }
-    var [pass, cargo, curbWeight, gcvwr, gvwr, towingCapacity, payload, tt_hitch, tt_gvwr] = data;
-    var totalPayload = pass + cargo;
-    var newgvw = curbWeight + totalPayload + tt_hitch;
+    var totalPayload = data.passengers + data.cargo;
+    var newgvw = data.curbWeight + data.totalPayload + data.tt_hitch;
     set('#totalPayload', totalPayload);
-    set('#availablePayload', (payload - totalPayload) - tt_hitch);
+    set('#availablePayload', (data.payload - totalPayload) - data.tt_hitch);
     set('#newgvw', newgvw);
-    set('#newgcvw', (tt_gvwr - tt_hitch) + newgvw);
-    set('#newTowingCapacity', towingCapacity);
+    set('#newgcvw', (data.tt_gvwr - data.tt_hitch) + newgvw);
+    set('#newTowingCapacity', data.towingCapacity);
     createCookie('towingData', JSON.stringify(data), 365);
     console.log('set cookie towingData = ' + JSON.stringify(data));
   }
@@ -52,8 +51,8 @@ $(document).ready(function() {
     if (raw !="") {
       console.log(raw);
       data = JSON.parse(raw);
-      for (i = 0; i < labels.length; i++) {
-        set('#' + labels[i], data[i]);
+      for(var key in data) {
+        set('#' + key, data[key]);
       }
       calculate();
     } else {
