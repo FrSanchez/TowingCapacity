@@ -55,6 +55,7 @@ $(document).ready(function() {
       for (i = 0; i < labels.length; i++) {
         set('#' + labels[i], data[i]);
       }
+      calculate();
     } else {
       console.log('no data saved');
     }
