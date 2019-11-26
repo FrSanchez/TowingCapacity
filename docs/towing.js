@@ -25,7 +25,7 @@ $(document).ready(function() {
       data[labels[i]] = get('#' + labels[i]);
     }
     var totalPayload = data.passengers + data.cargo;
-    var newgvw = data.curbWeight + data.totalPayload + data.tt_hitch;
+    var newgvw = data.curbWeight + totalPayload + data.tt_hitch;
     set('#totalPayload', totalPayload);
     set('#availablePayload', (data.payload - totalPayload) - data.tt_hitch);
     set('#newgvw', newgvw);
