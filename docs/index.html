@@ -1,41 +1,152 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Towing Capacity</title>
-  </head>
-  <body>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <title>Towing Capacity</title>
+</head>
+
+<body>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  <div class="container-fluid">
     <h1>Towing Capacity</h1>
+    <div class="row">
+      <div class="col-6">
+        <h2>Truck Data</h2>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <small id="curbWeightHelp" class="form-text text-muted"></small>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend" data-toggle="tooltip" title="The weight of the vehicle sitting on the curb
+            with all standard options and no passengers, cargo or load">
+            <span class="input-group-text">Curb Weight:</span>
+          </div>
+          <input class="form-control" type="text" placeholder="Curb Weight in pounds" id="curbWeight" aria-describedby="curbWeightHelp">
+        </div>
 
-    <div id="text">Loading...</div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend" data-toggle="tooltip" title="Gross Vehicle Weight Rating.
+          This is the maximum allowable weight your truck can carry">
+            <span class="input-group-text">GVWR:</span>
+          </div>
+          <input class="form-control" type="text" placeholder="GVWR" id="gvwr" aria-describedby="gcvwrHelp">
+        </div>
 
-    <form>
-      <div class="form-group">
-        <label for="curbWeight">Curb Weight</label>
-        <input class="form-control" type="text" placeholder="Curb Weight in pounds">
-        <small id="curbWeightHelp" class="form-text text-muted">From the manual or manufacturer's website</small>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend" data-toggle="tooltip" title="Gross Combined Vehicle Weight Rating.
+          This is the maximum allowable weight your truck & trailer can weight combined" data-boundary="window">
+            <span class="input-group-text">GCVWR:</span>
+          </div>
+          <input class="form-control" type="text" placeholder="GCVWR" id="gcvwr" aria-describedby="payloadHelp">
+        </div>
+
+        <div class="input-group mb-3">
+          <div class="input-group-prepend" data-toggle="tooltip" title="Also know as Cargo Carrying Capacity (CCC):
+            This is the maximum weight of passengers + cargo + hitch weight (load)
+            you can add to your tow vehicle without exceeding your GVWR.
+            To find your payload, look at the yellow sticker on your door. Or subtract our Curb Weight from your GVWR" data-boundary="window">
+            <span class="input-group-text">Payload:</span>
+          </div>
+          <input class="form-control" type="text" placeholder="Payload" id="payload" aria-describedby="payloadHelp">
+        </div>
+
+        <div class="input-group mb-3">
+          <div class="input-group-prepend" data-toggle="tooltip" title="The maximum amount of weight you can tow.
+            This can be found in your owners manual or your truck mgf. official towing guide.">
+            <span class="input-group-text">Towing Capacity:</span>
+          </div>
+          <input class="form-control" type="text" placeholder="Towing Capacity" id="towingCapacity" aria-describedby="towingCapacityHelp">
+        </div>
+
+        <h2>Estimated Payload</h2>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend" data-toggle="tooltip" title="Estimate about 150 pounds per adult and 80 per child">
+            <span class="input-group-text">Passengers:</span>
+          </div>
+          <input class="form-control" type="text" placeholder="Passengers in pounds" id="passengers" aria-describedby="passengersHelp">
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend" data-toggle="tooltip" title="">
+            <span class="input-group-text">Cargo:</span>
+          </div>
+          <input class="form-control" type="text" placeholder="Payload" id="cargo" aria-describedby="cargoHelp">
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend" data-toggle="tooltip" title="Passengers + Cargo">
+            <span class="input-group-text">Total Payload:</span>
+          </div>
+          <input class="form-control" type="text" placeholder="0" id="totalPayload" aria-describedby="payload" disabled>
+        </div>
+
+
       </div>
-      <div class="form-group">
-        <label for="exampleInputPassword1">Password</label>
-        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+
+      <div class="col-4">
+        <h2>Travel Trailer Data</h2>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend" data-toggle="tooltip" title="Unloaded Vehicle Weight">
+            <span class="input-group-text">UVW:</span>
+          </div>
+          <input class="form-control" type="text" placeholder="UVW" id="tt_uvw" aria-describedby="uvwHelp">
+          <!-- <small id="uvwHelp" class="form-text text-muted">Unloaded Vehicle Weight</small> -->
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend" data-toggle="tooltip" title="Gross Vehicle Weight">
+            <span class="input-group-text">GVWR:</span>
+          </div>
+          <input class="form-control" type="text" placeholder="GVWR" id="tt_gvwr" aria-describedby="ttGwvrHelp">
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend" data-toggle="tooltip" title="Hitch Weight">
+            <span class="input-group-text">Hitch Weight:</span>
+          </div>
+          <input class="form-control" type="text" placeholder="Hitch Weight" id="tt_hitch" aria-describedby="ttHitchHelp">
+        </div>
       </div>
-      <div class="form-group form-check">
-        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <div class="row">
+      <div class="col">
+
+      <h2>Results</h2>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend" data-toggle="tooltip" title="">
+          <span class="input-group-text">Available Payload:</span>
+        </div>
+        <input class="form-control" type="text" placeholder="0" id="availablePayload" aria-describedby="available payload" disabled>
       </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-  </body>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend" data-toggle="tooltip" title="">
+          <span class="input-group-text">New GVW:</span>
+        </div>
+        <input class="form-control" type="text" placeholder="0" id="newgvw" aria-describedby="new gvw" disabled>
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend" data-toggle="tooltip" title="">
+          <span class="input-group-text">New GCVW:</span>
+        </div>
+        <input class="form-control" type="text" placeholder="0" id="newgcvw" aria-describedby="new gcvw" disabled>
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend" data-toggle="tooltip" title="">
+          <span class="input-group-text">Towing Capacity:</span>
+        </div>
+        <input class="form-control" type="text" placeholder="0" id="newTowingCapacity" aria-describedby="actual towing capacity" disabled>
+      </div>
+    </div>
+    </div>
+  </div>
+
+    <script src="/Users/francisco.sanchez/Development/TowingCapacity/docs/demo.js"></script>
+</body>
+
 </html>
