@@ -8,3 +8,7 @@ footer {
   color: #888;
   text-align: center;
 }
+
+.alert {
+  display: none;
+}

@@ -25,17 +25,32 @@ $(document).ready(function() {
   }
 
   function calculate() {
+    $('.alert').hide();
     var data = {};
     for (i = 0; i < labels.length; i++) {
       data[labels[i]] = get('#' + labels[i]);
     }
     var totalPayload = data.passengers + data.cargo;
     var newgvw = data.curbWeight + totalPayload + data.tt_hitch;
+    var availablePayload = (data.payload - totalPayload) - data.tt_hitch;
+    var newgcvw = (data.tt_gvwr - data.tt_hitch) + newgvw;
+
+    if (availablePayload < 0) {
+      $('.payload-alert').show();
+    }
+    if (newgvw > data.gvwr) {
+      $('.newgvw-alert').show();
+    }
+    if (newgcvw > data.gcvwr) {
+      $('.newgcvw-alert').show();
+    }
+
     set('#totalPayload', totalPayload);
-    set('#availablePayload', (data.payload - totalPayload) - data.tt_hitch);
+    set('#availablePayload', availablePayload);
     set('#newgvw', newgvw);
-    set('#newgcvw', (data.tt_gvwr - data.tt_hitch) + newgvw);
+    set('#newgcvw', newgcvw);
     set('#newTowingCapacity', data.towingCapacity);
+
     createCookie('towingData', JSON.stringify(data), 365);
   }
 

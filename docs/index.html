@@ -26,10 +26,10 @@
     <h1>Towing Capacity Calculator</h1>
     <div class="row">
       <div class="col">
-        <h2>Truck Data</h2>
+        <h2>Vehicle Data</h2>
 
         <small id="curbWeightHelp" class="form-text text-muted"></small>
-        <div class="input-group mb-3">
+        <div class="input-group mb-1">
           <div class="input-group-prepend" data-toggle="tooltip" title="The weight of the vehicle sitting on the curb
             with all standard options and no passengers, cargo or load">
             <span class="input-group-text">Curb Weight:</span>
@@ -37,7 +37,7 @@
           <input class="form-control" type="text" placeholder="Curb Weight in pounds" id="curbWeight" aria-describedby="curbWeightHelp">
         </div>
 
-        <div class="input-group mb-3">
+        <div class="input-group mb-1">
           <div class="input-group-prepend" data-toggle="tooltip" title="Gross Vehicle Weight Rating.
           This is the maximum allowable weight your truck can carry">
             <span class="input-group-text">GVWR:</span>
@@ -45,7 +45,7 @@
           <input class="form-control" type="text" placeholder="GVWR" id="gvwr" aria-describedby="gcvwrHelp">
         </div>
 
-        <div class="input-group mb-3">
+        <div class="input-group mb-1">
           <div class="input-group-prepend" data-toggle="tooltip" title="Gross Combined Vehicle Weight Rating.
           This is the maximum allowable weight your truck & trailer can weight combined" data-boundary="window">
             <span class="input-group-text">GCVWR:</span>
@@ -53,7 +53,7 @@
           <input class="form-control" type="text" placeholder="GCVWR" id="gcvwr" aria-describedby="payloadHelp">
         </div>
 
-        <div class="input-group mb-3">
+        <div class="input-group mb-1">
           <div class="input-group-prepend" data-toggle="tooltip" title="Also know as Cargo Carrying Capacity (CCC):
             This is the maximum weight of passengers + cargo + hitch weight (load)
             you can add to your tow vehicle without exceeding your GVWR.
@@ -63,7 +63,7 @@
           <input class="form-control" type="text" placeholder="Payload" id="payload" aria-describedby="payloadHelp">
         </div>
 
-        <div class="input-group mb-3">
+        <div class="input-group mb-1">
           <div class="input-group-prepend" data-toggle="tooltip" title="The maximum amount of weight you can tow.
             This can be found in your owners manual or your truck mgf. official towing guide.">
             <span class="input-group-text">Towing Capacity:</span>
@@ -71,20 +71,20 @@
           <input class="form-control" type="text" placeholder="Towing Capacity" id="towingCapacity" aria-describedby="towingCapacityHelp">
         </div>
 
-        <h2>Estimated Payload</h2>
-        <div class="input-group mb-3">
+        <h3>Estimated Payload (in the vehicle )</h3>
+        <div class="input-group mb-1">
           <div class="input-group-prepend" data-toggle="tooltip" title="Estimate about 150 pounds per adult and 80 per child">
             <span class="input-group-text">Passengers:</span>
           </div>
           <input class="form-control" type="text" placeholder="Passengers in pounds" id="passengers" aria-describedby="passengersHelp">
         </div>
-        <div class="input-group mb-3">
+        <div class="input-group mb-1">
           <div class="input-group-prepend" data-toggle="tooltip" title="">
             <span class="input-group-text">Cargo:</span>
           </div>
           <input class="form-control" type="text" placeholder="Payload" id="cargo" aria-describedby="cargoHelp">
         </div>
-        <div class="input-group mb-3">
+        <div class="input-group mb-1">
           <div class="input-group-prepend" data-toggle="tooltip" title="Passengers + Cargo">
             <span class="input-group-text">Total Payload:</span>
           </div>
@@ -94,20 +94,20 @@
 
 
         <h2>Travel Trailer Data</h2>
-        <div class="input-group mb-3">
+        <div class="input-group mb-1">
           <div class="input-group-prepend" data-toggle="tooltip" title="Unloaded Vehicle Weight">
             <span class="input-group-text">UVW:</span>
           </div>
           <input class="form-control" type="text" placeholder="UVW" id="tt_uvw" aria-describedby="uvwHelp">
           <!-- <small id="uvwHelp" class="form-text text-muted">Unloaded Vehicle Weight</small> -->
         </div>
-        <div class="input-group mb-3">
+        <div class="input-group mb-1">
           <div class="input-group-prepend" data-toggle="tooltip" title="Gross Vehicle Weight">
             <span class="input-group-text">GVWR:</span>
           </div>
           <input class="form-control" type="text" placeholder="GVWR" id="tt_gvwr" aria-describedby="ttGwvrHelp">
         </div>
-        <div class="input-group mb-3">
+        <div class="input-group mb-1">
           <div class="input-group-prepend" data-toggle="tooltip" title="Hitch Weight">
             <span class="input-group-text">Hitch Weight:</span>
           </div>
@@ -117,27 +117,35 @@
     </div>
     <div class="row">
       <div class="col">
-
       <h2>Results</h2>
-      <div class="input-group mb-3">
+      <div class="alert alert-danger payload-alert" role="alert">
+      Your payload exceeds your vehicle's limit
+      </div>
+      <div class="input-group mb-1">
         <div class="input-group-prepend" data-toggle="tooltip" title="">
           <span class="input-group-text">Available Payload:</span>
         </div>
         <input class="form-control" type="text" placeholder="0" id="availablePayload" aria-describedby="available payload" disabled>
       </div>
-      <div class="input-group mb-3">
+      <div class="alert alert-danger newgvw-alert" role="alert">
+      Your Gross Vehicle Weight is exceeded
+      </div>
+      <div class="input-group mb-1">
         <div class="input-group-prepend" data-toggle="tooltip" title="">
           <span class="input-group-text">New GVW:</span>
         </div>
         <input class="form-control" type="text" placeholder="0" id="newgvw" aria-describedby="new gvw" disabled>
       </div>
-      <div class="input-group mb-3">
+      <div class="alert alert-danger newgcvw-alert" role="alert">
+      Your Gross Combined Vehicle Weight is exceeded
+      </div>
+      <div class="input-group mb-1">
         <div class="input-group-prepend" data-toggle="tooltip" title="">
           <span class="input-group-text">New GCVW:</span>
         </div>
         <input class="form-control" type="text" placeholder="0" id="newgcvw" aria-describedby="new gcvw" disabled>
       </div>
-      <div class="input-group mb-3">
+      <div class="input-group mb-1">
         <div class="input-group-prepend" data-toggle="tooltip" title="">
           <span class="input-group-text">Towing Capacity:</span>
         </div>
@@ -147,7 +155,7 @@
     </div>
   </div>
 
-  <script type="text/javascript" src="towing.min.js"></script>
+  <script type="text/javascript" src="towing.js"></script>
   <footer>
 &bull; Created by <a href="https://sanchezparralabs.home.blog/">Francisco Sanchez</a> &bull; Source code on <a href="https://github.com/FrSanchez/TowingCapacity" target="_blank" title="GitHub">GitHub</a>
 </footer>
